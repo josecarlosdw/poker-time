@@ -1,0 +1,38 @@
+  header, nav, aside, main {
+    margin: 0.5em; 
+    padding: 0.5em;
+    
+  }
+  .flex-container {
+    flex: 1;
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  .menu{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  h1, h2, p { margin: 0; color: rgb(255, 255, 255); }
+ 
+  aside { float: right; }
+  footer { clear: both; }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    text-align: center
+  }
+
+  .raised-button {
+    margin:50px
+  }

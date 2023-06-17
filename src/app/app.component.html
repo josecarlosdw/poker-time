@@ -1,0 +1,30 @@
+
+ <p>
+  <mat-toolbar color="primary">
+    <h1 routerLink="/">Poker Time!</h1>
+    <span class="flex-container"></span> <!-- Espaço flexível -->
+    <nav >
+    <a (click)="navigateToHome()">Início</a> 
+    </nav>
+     
+  </mat-toolbar>
+</p>
+ 
+ <aside>
+ 
+  
+   
+ </aside>
+ <main>
+   <router-outlet></router-outlet>
+  <button mat-raised-button color="primary" *ngIf="buttonVisibilityService.showCreateRoomButton" (click)="createRoom()">Criar Sala</button>
+
+
+   <!-- <img src="./assets/poker.gif" alt="poker time" /> -->
+
+ </main>
+ <footer>
+  <mat-toolbar color="primary">
+  </mat-toolbar>
+</footer>
+ 

@@ -1,0 +1,41 @@
+<div>
+  <!-- <h2>Sala Criada: {{ roomCode }}</h2>  -->
+  <h2>Sala Criada!</h2> 
+  <button mat-raised-button color="primary" (click)="addName()">Adicionar Nome</button>
+
+  <mat-card class="participant">
+   <div *ngFor="let participant of participants">
+    <span mat-card-subtitle>{{ participant.name }}</span>
+  </div>
+</mat-card>
+
+<div class="cards-title">
+  <p>Escolha uma Card</p>
+</div>
+
+
+  <div class="cards-container">
+    <div class="card" *ngFor="let card of cards"  (click)="selectCard(card)">
+      {{ card }}
+    </div>
+  </div>
+
+  <mat-card class="participants-with-card">
+    <mat-card-header>
+      <mat-card-title class="title-parti-bar">Cards selecionados:</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card >
+  <div *ngFor="let card of cards" class="selected-cards">
+    <span class="title-parti-card" mat-card-subtitle *ngIf="getParticipantsWithCard(card).length > 0">
+      {{ card }}
+      <span *ngFor="let participant of getParticipantsWithCard(card)">{{ participant.name }}</span>
+    </span>
+  </div>
+</mat-card>
+
+<button mat-raised-button class="button-media-value" color="primary" (click)="calcularMedia()">Calcular Média</button>
+<!-- <p *ngIf="media" class="media-value">Média: {{ media }}</p> -->
+
+</div>
