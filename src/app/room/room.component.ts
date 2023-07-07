@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MediaModalComponent } from '../media-modal/media-modal.component';
 import { AddParticipantModalComponent } from '../add-participant-modal/add-participant-modal.component';
 import { v4 as uuidv4 } from 'uuid';
+import { environment } from '../environments/environment';
+
 
 
 
@@ -30,6 +32,9 @@ export class RoomComponent {
 
   showCreateRoomButton: boolean = true;
 
+  cardTremor: boolean = false;
+cardExpansion: boolean = false;
+
   private socket: Socket;
 
   constructor(
@@ -37,7 +42,8 @@ export class RoomComponent {
     private dialog: MatDialog,
     private route: ActivatedRoute ) {
       
-    this.socket = io('http://localhost:3000');
+      this.socket = io(environment.apUrli);
+
 
     this.socket.on('vote', (data: { participant: string, vote: number }) => {
       const participant = this.participants.find(p => p.name === data.participant);

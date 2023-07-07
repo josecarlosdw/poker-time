@@ -60,3 +60,45 @@
     color:#6873b3;
    
   }
+
+
+  /* Animação de tremor */
+@keyframes cardTremor {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+/* Animação de expansão */
+@keyframes cardExpansion {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tremor {
+  animation: cardTremor 0.5s infinite;
+}
+
+.expanded {
+  transform: scale(1.1);
+  animation: cardExpansion 0.3s;
+}

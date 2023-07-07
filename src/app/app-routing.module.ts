@@ -4,10 +4,9 @@ import { RoomComponent } from './room/room.component';
 
 
 const routes: Routes = [
-  { path: 'room/', component: RoomComponent },
+  { path: 'room', component: RoomComponent },
   { path: 'room/:roomCode', component: RoomComponent },
-  { path: 'room/:participants', component: RoomComponent },
-  
+  { path: 'room/participants/:participants', component: RoomComponent },  
 ];
 
 @NgModule({

@@ -15,7 +15,10 @@
 
 
   <div class="cards-container">
-    <div class="card" *ngFor="let card of cards"  (click)="selectCard(card)">
+    <div class="card" *ngFor="let card of cards"  (click)="selectCard(card)" 
+    (mouseover)="cardTremor = true" (mouseleave)="cardTremor = false"
+    (click)="cardExpansion = !cardExpansion"
+    [class.tremor]="cardTremor" [class.expanded]="cardExpansion">
       {{ card }}
     </div>
   </div>
