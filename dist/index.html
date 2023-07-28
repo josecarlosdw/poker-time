@@ -12,5 +12,28 @@
 <style>html{--mdc-checkbox-disabled-selected-icon-color:rgba(0, 0, 0, .38);--mdc-checkbox-disabled-unselected-icon-color:rgba(0, 0, 0, .38);--mdc-checkbox-selected-checkmark-color:#fff;--mdc-checkbox-selected-focus-icon-color:#ff4081;--mdc-checkbox-selected-hover-icon-color:#ff4081;--mdc-checkbox-selected-icon-color:#ff4081;--mdc-checkbox-selected-pressed-icon-color:#ff4081;--mdc-checkbox-unselected-focus-icon-color:#212121;--mdc-checkbox-unselected-hover-icon-color:#212121;--mdc-checkbox-unselected-icon-color:rgba(0, 0, 0, .54);--mdc-checkbox-unselected-pressed-icon-color:rgba(0, 0, 0, .54);--mdc-checkbox-selected-focus-state-layer-color:#ff4081;--mdc-checkbox-selected-hover-state-layer-color:#ff4081;--mdc-checkbox-selected-pressed-state-layer-color:#ff4081;--mdc-checkbox-unselected-focus-state-layer-color:black;--mdc-checkbox-unselected-hover-state-layer-color:black;--mdc-checkbox-unselected-pressed-state-layer-color:black}html{--mdc-checkbox-state-layer-size:40px}.mat-typography{font-size:14px;font-weight:400;line-height:20px;font-family:Roboto,sans-serif;letter-spacing:.0178571429em}html,body{height:100%}body{margin:0;font-family:Roboto,Helvetica Neue,sans-serif}</style><link rel="stylesheet" href="styles.abc6d54c123c2e41.css" media="print" onload="this.media=&apos;all&apos;"><noscript><link rel="stylesheet" href="styles.abc6d54c123c2e41.css"></noscript></head>
 <body class="mat-typography">
   <app-root></app-root>
-<script src="runtime.973684d959794970.js" type="module"></script><script src="polyfills.be9d3141528a425a.js" type="module"></script><script src="main.2f2fe162288288ef.js" type="module"></script></body>
+  <script>
+    const socket = io('https://app-poker-time.onrender.com'); // Substitua pelo URL do seu servidor
+
+    // Receber evento participantJoined e atualizar a interface do usuário
+    socket.on('participantJoined', (participant) => {
+      console.log('Novo participante:', participant);
+      // Aqui você pode atualizar a interface do usuário com os dados do novo participante
+      // Por exemplo, adicionar o nome do participante a uma lista de participantes na sala
+    });
+
+    // Receber evento participantLeft e atualizar a interface do usuário
+    socket.on('participantLeft', (participantName) => {
+      console.log('Participante desconectado:', participantName);
+      // Aqui você pode remover o participante da lista de participantes na sala, caso necessário
+    });
+
+    // Receber evento vote e atualizar a interface do usuário com o voto do participante
+    socket.on('vote', (data) => {
+      const { participant, vote } = data;
+      console.log(`Participante votou: ${participant} - Voto: ${vote}`);
+      // Aqui você pode atualizar a interface do usuário para exibir o voto do participante
+    });
+  </script>
+<script src="runtime.973684d959794970.js" type="module"></script><script src="polyfills.be9d3141528a425a.js" type="module"></script><script src="main.2b77803fc4d8b7de.js" type="module"></script></body>
 </html>
